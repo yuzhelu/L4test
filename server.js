@@ -57,7 +57,7 @@ router.route('/movies/:title')
         }
     });
 
-router.route('/movies/viewall')
+router.route('/movies/all')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var viewReview = req.query.reviews;
         if (viewReview !== "true"){
@@ -145,7 +145,7 @@ router.route('/movies/delete/:title')
         });
     });
 
-router.route('/reviews/viewall')
+router.route('/reviews/all')
     .get(authJwtController.isAuthenticated, function (req, res) {
         Review.find(function (err, review) {
             if (err) return res.send(err);
@@ -213,24 +213,24 @@ router.route('/reviews/insert/:title')
     });
 
 router.post('/signup', function(req, res) {
-    if (!req.body.username || !req.body.fullname || !req.body.password) {
-        res.json({success: false, msg: 'Please pass username, fullname, and password.'});
+    if (!req.body.username || !req.body.name || !req.body.password) {
+        res.json({success: false, msg: 'Please pass username, name, and password.'});
     }
     else {
         var user = new User();
         user.username = req.body.username;
-        user.fullname = req.body.fullname;
+        user.name = req.body.name;
         user.password = req.body.password;
 
         user.save(function(err) {
             if (err) {
                 // duplicate entry
                 if (err.code == 11000)
-                    return res.json({ success: false, msg: 'User already exists in database. '});
+                    return res.json({ success: false, msg: 'User already exists. '});
                 else
                     return res.send(err);
             }
-            res.json({ msg: 'User sign up success.' });
+            res.json({ msg: 'signed up.' });
         });
     }
 });
@@ -238,10 +238,10 @@ router.post('/signup', function(req, res) {
 router.post('/signin', function(req, res) {
     var userNew = new User();
     userNew.username = req.body.username;
-    userNew.fullname = req.body.fullname;
+    userNew.name = req.body.name;
     userNew.password = req.body.password;
 
-    User.findOne({ username: userNew.username }).select('username fullname password').exec(function(err, user) {
+    User.findOne({ username: userNew.username }).select('username name password').exec(function(err, user) {
         if (err) res.send(err);
 
         user.comparePassword(userNew.password, function(isMatch){
