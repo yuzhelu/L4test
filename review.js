@@ -13,7 +13,7 @@ var ReviewSchema = new Schema(
 
 ReviewSchema.pre('save',function (next) {
     if(this.rating > 5 || this.rating < 1){
-        return next(new Error('Rating must be a number from 1 to 5.'));
+        return next(new Error('Rating must be 1-5.'));
     }
     next()
 });

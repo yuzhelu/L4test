@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var MovieSchema = new Schema(
     {
         title: {type: String, required: true},
-        year: {type: Number, required: true},
+        yearRelease: {type: Number, required: true},
         genre: {type: String, enum: ['Action', 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'Horror',
                 'Mystery', 'Thriller', 'Western'], required: true},
         actors: {type: Array},

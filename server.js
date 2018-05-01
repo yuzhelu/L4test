@@ -28,7 +28,7 @@ app.use(cors());
 var router = express.Router();
 var signinUser = "";
 
-router.route('/movies/view/:title')
+router.route('/movies/:title')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var title = req.params.title;
         var viewReview = req.query.reviews;
