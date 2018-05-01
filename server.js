@@ -87,7 +87,7 @@ router.route('/movies/insert')
             if (movie === null){
                 var newMovie = new Movie(req, res);
                 newMovie.title = req.body.title;
-                newMovie.year = req.body.year;
+                newMovie.yearRelease = req.body.yearRelease;
                 newMovie.genre = req.body.genre;
                 newMovie.actors = req.body.actors;
                 newMovie.save(function(err) {
@@ -113,7 +113,7 @@ router.route('/movies/update/:title')
         Movie.findOne({title: req.params.title}).exec(function(err, movie) {
             if (movie !== null) {
                 movie.title = req.body.title;
-                movie.year = req.body.year;
+                movie.yearRelease = req.body.yearRelease;
                 movie.genre = req.body.genre;
                 movie.actors = req.body.actors;
                 movie.save(function(err) {
