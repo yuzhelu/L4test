@@ -68,6 +68,9 @@ router.route('/movies/')
         }
         else{
             Movie.aggregate([{
+                $match:{
+                    title: title
+                }},{
                 $lookup:{
                     from: "reviews",
                     localField: "title",
