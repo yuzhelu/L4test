@@ -33,10 +33,10 @@ router.route('/movies/:title')
         var title = req.params.title;
         var viewReview = req.query.reviews;
         if (viewReview !== "true"){
-            Movie.findOne({title: title}, function(err, movie) {
+            Movie.findOne({title: title}, function(err, movies) {
                 if (err) res.send(err);
 
-                res.json(movie);
+                res.json(movies);
             });
         }
         else{
@@ -50,9 +50,9 @@ router.route('/movies/:title')
                     foreignField: "movie",
                     as: "movie_reviews"
                 }
-            }]).exec((err, movie)=>{
+            }]).exec((err, movies)=>{
                 if (err) res.send(err);
-            res.json(movie);
+            res.json(movies);
         });
         }
     });
@@ -61,9 +61,9 @@ router.route('/movies/all')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var viewReview = req.query.reviews;
         if (viewReview !== "true"){
-            Movie.find(function (err, movie) {
+            Movie.find(function (err, movies) {
                 if (err) res.send(err);
-                res.json(movie);
+                res.json(movies);
             }).sort({ avgRating: -1 });
         }
         else{
