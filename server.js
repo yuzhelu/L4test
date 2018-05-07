@@ -57,7 +57,7 @@ router.route('/movies/:title')
         }
     });
 
-router.route('/movies/all')
+router.route('/movies/')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var viewReview = req.query.reviews;
         if (viewReview !== "true"){
