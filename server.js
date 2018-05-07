@@ -64,7 +64,7 @@ router.route('/movies/all')
             Movie.find(function (err, movies) {
                 if (err) res.send(err);
                 res.json(movies);
-            }).sort({ avgRating: -1 });
+            });
         }
         else{
             Movie.aggregate([{
