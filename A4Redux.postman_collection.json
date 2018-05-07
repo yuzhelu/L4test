@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "bf0dd601-af41-4817-9395-f76694794295",
+		"name": "A4Redux",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Sign up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "lutest2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "lutest2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "lutest2\n",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Sign in",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "lutest2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "lutest2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "lutest2\n",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/signin",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie Already in database",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"title\": \"Taken\",\r\n\t\"yearRelease\": \"1990\",\r\n\t\"genre\": \"Action\",\r\n\t\"imageUrl\": \"https://images-na.ssl-images-amazon.com/images/I/71QGjZCXpBL._SY445_.jpg\",\r\n\t\"actors\": [{\r\n\t\t\t\"ActorName\": \"AYESHA PERWAIZ\",\r\n\t\t\t\"CharacterName\": \"Bryan Mills\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Maggie Grace\",\r\n\t\t\t\"CharacterName\": \"Kim\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Leland Orser\",\r\n\t\t\t\"CharacterName\": \"Sam\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/movies/insert",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not in database",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/movies/notindatabase",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies",
+						"notindatabase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/movies/",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid request w/o review",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/movies/Taken",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies",
+						"Taken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid request w review",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/movies?reviews=true",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "reviews",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie request w review",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/movies/Taken?reviews=true",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies",
+						"Taken"
+					],
+					"query": [
+						{
+							"key": "reviews",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid save review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "review",
+							"value": "ok",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "4",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/reviews/insert/Taken",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"reviews",
+						"insert",
+						"Taken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid save not in DB",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "review",
+							"value": "ok",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "4",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/reviews/insert/notindatabase",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"reviews",
+						"insert",
+						"notindatabase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User already exists",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "lutest2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "lutest2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "lutest2\n",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save movie missing year",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZjA5MzFhY2E5ZmY0MDAxNDc3YmMzYyIsInVzZXJuYW1lIjoibHV0ZXN0MiIsImlhdCI6MTUyNTcxNjE4NH0.5LMp6vmSQDvTaWw224q9lg2xmurQeEChd3QFgGoWcY8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"title\": \"missingYear\",\r\n\t\"genre\": \"Action\",\r\n\t\"imageUrl\": \"https://images-na.ssl-images-amazon.com/images/I/71QGjZCXpBL._SY445_.jpg\",\r\n\t\"actors\": [{\r\n\t\t\t\"ActorName\": \"AYESHA PERWAIZ\",\r\n\t\t\t\"CharacterName\": \"Bryan Mills\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Maggie Grace\",\r\n\t\t\t\"CharacterName\": \"Kim\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"ActorName\": \"Leland Orser\",\r\n\t\t\t\"CharacterName\": \"Sam\"\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://luhw4redux.herokuapp.com/movies/insert",
+					"protocol": "https",
+					"host": [
+						"luhw4redux",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
